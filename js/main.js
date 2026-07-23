@@ -653,8 +653,7 @@ function renderComic() {
             ${renderGrid(group.videos)}
           </div>
         </div>
-      </div>`;
-  }).join('');
+      </div>`).join('');
 
   // 绑定横幅点击：展开/收拢，互斥
   container.querySelectorAll('.eco-acc-header').forEach(header => {
