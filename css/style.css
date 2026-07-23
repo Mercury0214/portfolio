@@ -360,7 +360,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 12px;
   overflow: hidden;
   transition: background 0.3s ease;
-  background: #ececec;
+  background: #fff;
 }
 .eco-acc-item.active { background: #fff; }
 .eco-acc-header {
@@ -372,8 +372,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   user-select: none;
   transition: background 0.25s;
 }
-.eco-acc-header:hover { background: rgba(0,0,0,0.04); }
-.eco-acc-item.active .eco-acc-header:hover { background: rgba(0,0,0,0.02); }
+.eco-acc-item:not(.active) .eco-acc-header:hover { background: #ececec; }
+.eco-acc-item.active .eco-acc-header:hover { background: transparent; }
 .eco-acc-header-left { display: flex; align-items: center; gap: 12px; }
 .eco-acc-dot {
   width: 8px; height: 8px; border-radius: 50%;
