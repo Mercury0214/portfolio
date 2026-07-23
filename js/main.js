@@ -616,15 +616,8 @@ function renderDigitalHuman() {
 
 /* ---- 渲染：漫剧 Tab + 内容 ---- */
 function renderComic() {
-  const tabsEl = document.getElementById('comicTabs');
-  const contentEl = document.getElementById('comicContent');
+  const container = document.getElementById('comicAccordion');
 
-  // Tab 按钮
-  tabsEl.innerHTML = DATA.comic.map((group, i) =>
-    `<button class="tab-btn ${i === 0 ? 'active' : ''}" data-tab="${group.id}">${escapeXml(group.title)}</button>`
-  ).join('');
-
-  // 渲染视频卡片
   function renderGrid(videos) {
     return `<div class="video-grid video-grid-comic">
       ${videos.map(video => `
@@ -646,24 +639,42 @@ function renderComic() {
     </div>`;
   }
 
-  function showGroup(groupId) {
-    const group = DATA.comic.find(g => g.id === groupId);
-    if (!group) return;
-    contentEl.innerHTML = renderGrid(group.videos);
-    bindVideoModal();
-  }
+  container.innerHTML = DATA.comic.map(group => {
+    const videoCount = group.videos.length;
+    const sub = '视频×' + videoCount;
 
-  // Tab 切换
-  tabsEl.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabsEl.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      showGroup(btn.dataset.tab);
+    return `
+      <div class="eco-acc-item" data-set-id="${group.id}">
+        <div class="eco-acc-header">
+          <div class="eco-acc-header-left">
+            <div class="eco-acc-dot"></div>
+            <div>
+              <div class="eco-acc-title">${escapeXml(group.title)}</div>
+              <div class="eco-acc-sub">${sub}</div>
+            </div>
+          </div>
+          <span class="eco-acc-arrow">&rsaquo;</span>
+        </div>
+        <div class="eco-acc-body">
+          <div class="eco-acc-body-inner">
+            ${renderGrid(group.videos)}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // 绑定横幅点击：展开/收拢，互斥
+  container.querySelectorAll('.eco-acc-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const item = this.closest('.eco-acc-item');
+      const wasActive = item.classList.contains('active');
+      container.querySelectorAll('.eco-acc-item').forEach(el => el.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
     });
   });
 
-  // 默认显示第一个
-  showGroup(DATA.comic[0].id);
+  // 绑定视频弹窗
+  bindVideoModal();
 }
 
 /* ============================================================
