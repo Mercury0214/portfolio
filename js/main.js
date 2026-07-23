@@ -33,7 +33,7 @@ const DATA = {
     }
   },
 
-  /* ---- 01. 电商产品图（4套） ----
+  /* ---- 01. 电商产品图（5套） ----
      每套包含: 主图(1:1) + 详情页长图 + Banner海报 + 宣传海报
      数量不限，子标题会自动显示实际数量
      替换 src 路径为你图片的实际路径 */
@@ -109,6 +109,27 @@ const DATA = {
     },
     {
       id: 'eco-4',
+      title: '酥饼',
+      subtitle: 'AIGC电商视觉 · 酥饼产品图',
+      mainImages: [
+        { src: 'assets/ecommerce/set5/main-1.png', label: '主图 1' },
+        { src: 'assets/ecommerce/set5/main-2.png', label: '主图 2' },
+        { src: 'assets/ecommerce/set5/main-3.png', label: '主图 3' },
+        { src: 'assets/ecommerce/set5/main-4.png', label: '主图 4' },
+        { src: 'assets/ecommerce/set5/main-5.png', label: '主图 5' },
+      ],
+      detailImage: { src: 'assets/ecommerce/set5/detail.png', label: '详情页长图' },
+      banners: [
+        { src: 'assets/ecommerce/set5/banner-1.png', label: 'Banner 海报 1' },
+        { src: 'assets/ecommerce/set5/banner-2.png', label: 'Banner 海报 2' },
+      ],
+      posters: [
+        { src: 'assets/ecommerce/set5/poster-1.png', label: '宣传海报 1' },
+        { src: 'assets/ecommerce/set5/poster-2.png', label: '宣传海报 2' },
+      ]
+    },
+    {
+      id: 'eco-5',
       title: '跨境电商产品',
       subtitle: 'AIGC电商视觉 · 扫地机器人产品图',
       hideScrollHint: true,
