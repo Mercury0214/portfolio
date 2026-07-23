@@ -639,19 +639,12 @@ function renderComic() {
     </div>`;
   }
 
-  container.innerHTML = DATA.comic.map(group => {
-    const videoCount = group.videos.length;
-    const sub = '视频×' + videoCount;
-
-    return `
+  container.innerHTML = DATA.comic.map(group => `
       <div class="eco-acc-item" data-set-id="${group.id}">
         <div class="eco-acc-header">
           <div class="eco-acc-header-left">
             <div class="eco-acc-dot"></div>
-            <div>
-              <div class="eco-acc-title">${escapeXml(group.title)}</div>
-              <div class="eco-acc-sub">${sub}</div>
-            </div>
+            <div class="eco-acc-title">${escapeXml(group.title)}</div>
           </div>
           <span class="eco-acc-arrow">&rsaquo;</span>
         </div>
