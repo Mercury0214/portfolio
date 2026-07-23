@@ -328,7 +328,7 @@ function renderEcommerce() {
     const detailDataAttr = escapeXml(JSON.stringify(detailImages.map(img => ({ src: imgSrc(img, 'auto'), label: img.label }))));
 
     return `
-      <div class="eco-acc-item ${i === 0 ? 'active' : ''}" data-set-id="${set.id}">
+      <div class="eco-acc-item" data-set-id="${set.id}">
         <div class="eco-acc-header">
           <div class="eco-acc-header-left">
             <div class="eco-acc-dot"></div>
