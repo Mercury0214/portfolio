@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AIGC视觉创作者作品集 — 电商产品图、品牌IP设定、TVC广告、数字人口播、漫剧">
+  <title>AIGC视觉创作者 · 作品集</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== 导航栏 ==================== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <span class="logo-mark">Ai</span>
+        <span class="logo-text" id="navLogoText">AIGC作品集</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 右侧悬浮导航 -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" data-section="about">个人介绍</a></li>
+    <li><a href="#ecommerce" data-section="ecommerce">电商产品图</a></li>
+    <li><a href="#brand-ip" data-section="brand-ip">品牌IP设定</a></li>
+    <li><a href="#tvc" data-section="tvc">TVC广告</a></li>
+    <li><a href="#digital-human" data-section="digital-human">数字人口播</a></li>
+    <li><a href="#comic" data-section="comic">漫剧</a></li>
+  </ul>
+
+  <!-- ==================== Hero ==================== -->
+  <header id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag" id="heroTag">AIGC 视觉创作</div>
+      <h1 class="hero-title" id="heroTitle">AIGC作品集</h1>
+      <p class="hero-subtitle" id="heroSubtitle">用AI构建商业视觉与数字创意资产，让想象力成为可见的价值。</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary">关于我</a>
+        <a href="#ecommerce" class="btn btn-primary">查看作品</a>
+      </div>
+      <div class="hero-scroll">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">SCROLL</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主内容区 ==================== -->
+  <main id="main">
+
+    <!-- 01. 个人介绍 -->
+    <section id="about" class="section section-alt">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">个人介绍</h2>
+      </div>
+      <div class="about-wrapper" id="aboutContent">
+        <div class="about-bio">
+          <h3 id="aboutName">你的名字</h3>
+          <p class="about-role" id="aboutRole">AIGC视觉创作者</p>
+          <p class="about-text" id="aboutBio">在这里填写你的个人简介。描述你的专业背景、擅长领域、创作理念等。这段文字将向访客展示你是谁、你能做什么。</p>
+        </div>
+        <div class="about-skills">
+          <h4>技能与工具</h4>
+          <div class="skill-tags" id="skillTags"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. 电商产品图 -->
+    <section id="ecommerce" class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">电商产品图</h2>
+        <p class="section-desc">AIGC驱动的电商视觉全链路产出 — 主图、详情页、Banner、宣传海报</p>
+      </div>
+      <!-- 收拢展开式产品列表 -->
+      <div class="eco-accordion" id="ecommerceAccordion"></div>
+    </section>
+
+    <!-- 03. 品牌IP设定 -->
+    <section id="brand-ip" class="section section-alt">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">品牌IP设定</h2>
+        <p class="section-desc">AI生成的品牌角色设计、色彩体系与应用场景</p>
+      </div>
+      <div class="tabs-wrapper" id="brandIPTabs"></div>
+      <div class="tab-content" id="brandIPContent"></div>
+    </section>
+
+    <!-- 04. TVC广告 -->
+    <section id="tvc" class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">TVC广告</h2>
+        <p class="section-desc">AI视频广告全链路 — 从概念、分镜到最终成片</p>
+      </div>
+      <!-- 尺寸筛选 -->
+      <div class="filter-bar" id="tvcFilter">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="16:9">16:9 横版</button>
+        <button class="filter-btn" data-filter="9:16">9:16 竖版</button>
+      </div>
+      <div class="video-grid" id="tvcGrid"></div>
+    </section>
+
+    <!-- 05. 数字人口播 -->
+    <section id="digital-human" class="section section-alt">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">数字人口播广告</h2>
+        <p class="section-desc">AI数字人形象驱动，9:16竖版口播广告</p>
+      </div>
+      <div class="video-grid video-grid-vertical" id="digitalHumanGrid"></div>
+    </section>
+
+    <!-- 06. 漫剧 -->
+    <section id="comic" class="section">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">漫剧</h2>
+        <p class="section-desc">AI分镜生成 + 动态漫小说</p>
+      </div>
+      <div class="tabs-wrapper" id="comicTabs"></div>
+      <div class="tab-content" id="comicContent"></div>
+    </section>
+  </main>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <div class="footer-item">
+          <span class="footer-label">电话</span>
+          <span class="footer-value" id="footerPhone">138-XXXX-XXXX</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-label">邮箱</span>
+          <span class="footer-value" id="footerEmail">your@email.com</span>
+        </div>
+        <div class="footer-item">
+          <span class="footer-label">城市</span>
+          <span class="footer-value" id="footerLocation">你的城市</span>
+        </div>
+      </div>
+      <p class="footer-copy" id="footerCopy">&copy; 2026 Your Name. All rights reserved.</p>
+    </div>
+    <a href="#hero" class="back-to-top" aria-label="回到顶部">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </a>
+  </footer>
+
+  <!-- ==================== 图片灯箱 ==================== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="上一张">&#8249;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+    <button class="lightbox-next" id="lightboxNext" aria-label="下一张">&#8250;</button>
+  </div>
+
+  <!-- ==================== 详情页长图查看器 ==================== -->
+  <div class="lightbox" id="detailViewer">
+    <button class="lightbox-close" id="detailViewerClose" aria-label="关闭">&times;</button>
+    <div class="detail-viewer-scroll" id="detailViewerContent"></div>
+  </div>
+
+  <!-- ==================== 视频弹窗 ==================== -->
+  <div class="video-modal" id="videoModal">
+    <button class="video-modal-close" id="videoModalClose" aria-label="关闭">&times;</button>
+    <div class="video-modal-content">
+      <video id="videoPlayer" controls></video>
+      <div class="video-modal-info">
+        <h3 id="videoModalTitle"></h3>
+        <p id="videoModalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

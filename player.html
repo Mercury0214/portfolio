@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频播放 · AIGC作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: #0e0e10; color: #f5f5f7; }
+    .player-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px 64px;
+      box-sizing: border-box;
+    }
+    .player-back {
+      align-self: flex-start;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .player-back:hover { color: #fff; }
+    .player-wrap { width: 100%; max-width: 1100px; }
+    .player-wrap.vertical { max-width: 460px; }
+    .player-video {
+      width: 100%;
+      max-height: 78vh;
+      background: #000;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .player-info { margin-top: 20px; }
+    .player-info h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .player-info p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .player-error {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="player-page">
+    <a class="player-back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      返回作品集
+    </a>
+    <div class="player-wrap" id="playerWrap">
+      <video id="playerVideo" class="player-video" controls playsinline></video>
+      <div class="player-info">
+        <h1 id="playerTitle">加载中…</h1>
+        <p id="playerDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('v');
+      const allVideos = [
+        ...DATA.tvc,
+        ...DATA.digitalHuman,
+        ...DATA.comic.flatMap(g => g.videos)
+      ];
+      const video = allVideos.find(v => v.id === id);
+      const wrap = document.getElementById('playerWrap');
+      const player = document.getElementById('playerVideo');
+      const titleEl = document.getElementById('playerTitle');
+      const descEl = document.getElementById('playerDesc');
+
+      if (!video) {
+        wrap.innerHTML = '<div class="player-error">未找到该视频，请从作品集页面进入。</div>';
+        return;
+      }
+
+      if (video.ratio === '9:16') {
+        wrap.classList.add('vertical');
+      }
+
+      if (video.src && video.src.trim() !== '') {
+        player.src = video.src;
+      }
+      if (video.poster && video.poster.trim() !== '') {
+        player.poster = video.poster;
+      }
+      titleEl.textContent = video.title;
+      descEl.textContent = video.desc;
+      document.title = video.title + ' · AIGC作品集';
+      player.play().catch(() => {});
+    })();
+  </script>
+</body>
+</html>
