@@ -120,7 +120,7 @@ const DATA = {
         { src: 'assets/ecommerce/set4/main-5.png', label: '主图 5' },
         { src: 'assets/ecommerce/set4/main-6.png', label: '主图 6' },
       ],
-      detailImage: { src: 'assets/ecommerce/set4/detail.png', label: '详情页长图' },
+      detailImage: { src: 'assets/ecommerce/set4/detail-new.jpg', label: '详情页长图' },
       banners: [
         { src: 'assets/ecommerce/set4/banner-1.png', label: 'Banner 海报 1' },
         { src: 'assets/ecommerce/set4/banner-2.png', label: 'Banner 海报 2' },
