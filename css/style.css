@@ -78,7 +78,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-width: var(--container);
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-lg);
-  padding-right: 140px;
 }
 .section-alt {
   max-width: none;
@@ -87,7 +86,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateX(-50%);
   width: 100vw;
   padding-left: calc((100vw - var(--container)) / 2 + var(--space-lg));
-  padding-right: calc((100vw - var(--container)) / 2 + 140px);
+  padding-right: calc((100vw - var(--container)) / 2 + var(--space-lg));
 }
 
 /* ---- 章节标题 ---- */
