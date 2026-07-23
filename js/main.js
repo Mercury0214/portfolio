@@ -17,6 +17,7 @@ const DATA = {
   /* ---- 个人信息（替换为你的信息） ---- */
   profile: {
     name: 'AIGC作品集',
+    personName: '田旭',
     title: 'AIGC 视觉创作',
     tagline: '用AI构建商业视觉与数字创意资产，让想象力成为可见的价值。',
     bio: '在这里填写你的个人简介。描述你的专业背景、擅长领域、创作理念等。这段文字将向访客展示你是谁、你能做什么。',
@@ -271,13 +272,13 @@ function renderProfile() {
   document.getElementById('heroTitle').textContent = p.name;
   document.getElementById('heroTag').textContent = p.title;
   document.getElementById('heroSubtitle').textContent = p.tagline;
-  document.getElementById('aboutName').textContent = p.name;
+  document.getElementById('aboutName').textContent = p.personName;
   document.getElementById('aboutRole').textContent = p.title;
   document.getElementById('aboutBio').textContent = p.bio;
   document.getElementById('footerPhone').textContent = p.contact.phone;
   document.getElementById('footerEmail').textContent = p.contact.email;
   document.getElementById('footerLocation').textContent = p.contact.location;
-  document.getElementById('footerCopy').textContent = `\u00A9 ${new Date().getFullYear()} ${p.name}. All rights reserved.`;
+  document.getElementById('footerCopy').textContent = `\u00A9 ${new Date().getFullYear()} ${p.personName}. All rights reserved.`;
 
   // 技能标签
   const tagsEl = document.getElementById('skillTags');
