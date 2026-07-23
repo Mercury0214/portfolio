@@ -18,7 +18,7 @@ const DATA = {
   profile: {
     name: 'AIGC作品集',
     personName: '田旭',
-    title: 'AIGC 视觉创作',
+    title: 'AIGC视觉创作者',
     tagline: '用AI构建商业视觉与数字创意资产，让想象力成为可见的价值。',
     bio: '我是一名专注于 AIGC 商业视觉创作的创作者，致力于将 AI 生成能力与品牌视觉需求结合，输出可直接落地的高完成度作品。在电商产品图、品牌 IP 设定、TVC 广告、数字人口播与动态漫剧等方向持续探索，熟练运用 Midjourney、Stable Diffusion、ComfyUI、Runway、Sora、Photoshop 与 C4D 等工具，完成从概念生成、细节优化到后期整合的全流程创作。\n\n我相信 AI 不是替代创意，而是放大创意的工具——通过稳定的风格控制与高效的视觉生产，帮助品牌把想象力转化为可传播、可转化的视觉资产。',
     skills: [
