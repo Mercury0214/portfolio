@@ -26,9 +26,9 @@ const DATA = {
       'Sora', 'Seedance', 'Photoshop', '剪映', 'C4D', 'OpenClaw'
     ],
     contact: {
-      phone: '138-XXXX-XXXX',
-      email: 'your@email.com',
-      location: '你的城市'
+      phone: '18716135576',
+      email: 'kinglo0214@gmail.com',
+      location: '广州'
     }
   },
 
