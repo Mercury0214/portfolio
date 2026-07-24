@@ -328,21 +328,21 @@ function renderEcommerce() {
     // 主图
     const mainImgs = set.mainImages.map(img =>
       `<div class="main-image-item" data-gallery="eco-main-${set.id}" data-src="${imgSrc(img, '1:1')}" data-label="${escapeXml(img.label)}">
-        <img src="${imgSrc(img, '1:1')}" alt="${escapeXml(img.label)}">
+        <img data-src="${imgSrc(img, '1:1')}" alt="${escapeXml(img.label)}" loading="lazy" class="lazy-img">
       </div>`
     ).join('');
 
     // Banner
     const bannerImgs = set.banners.map(banner =>
       `<div class="banner-item" data-gallery="eco-banner-${set.id}" data-src="${imgSrc(banner, '1920:600')}" data-label="${escapeXml(banner.label)}">
-        <img src="${imgSrc(banner, '1920:600')}" alt="${escapeXml(banner.label)}">
+        <img data-src="${imgSrc(banner, '1920:600')}" alt="${escapeXml(banner.label)}" loading="lazy" class="lazy-img">
       </div>`
     ).join('');
 
     // 宣传海报
     const posterImgs = set.posters.map(poster =>
       `<div class="poster-item" data-gallery="eco-poster-${set.id}" data-src="${imgSrc(poster, '9:16')}" data-label="${escapeXml(poster.label)}">
-        <img src="${imgSrc(poster, '9:16')}" alt="${escapeXml(poster.label)}">
+        <img data-src="${imgSrc(poster, '9:16')}" alt="${escapeXml(poster.label)}" loading="lazy" class="lazy-img">
       </div>`
     ).join('');
 
@@ -401,7 +401,13 @@ function renderEcommerce() {
       const item = this.closest('.eco-acc-item');
       const wasActive = item.classList.contains('active');
       container.querySelectorAll('.eco-acc-item').forEach(el => el.classList.remove('active'));
-      if (!wasActive) item.classList.add('active');
+      if (!wasActive) {
+        item.classList.add('active');
+        // 按需加载：展开时才设置 img src
+        item.querySelectorAll('img.lazy-img[data-src]').forEach(img => {
+          if (!img.src) img.src = img.dataset.src;
+        });
+      }
     });
   });
 
@@ -677,13 +683,26 @@ function renderComic() {
         </div>
       </div>`).join('');
 
+  // 按需加载：将漫剧视频封面 img src 转为 data-src，展开时才加载
+  container.querySelectorAll('img[src]').forEach(img => {
+    img.dataset.src = img.getAttribute('src');
+    img.removeAttribute('src');
+    img.classList.add('lazy-img');
+  });
+
   // 绑定横幅点击：展开/收拢，互斥
   container.querySelectorAll('.eco-acc-header').forEach(header => {
     header.addEventListener('click', function() {
       const item = this.closest('.eco-acc-item');
       const wasActive = item.classList.contains('active');
       container.querySelectorAll('.eco-acc-item').forEach(el => el.classList.remove('active'));
-      if (!wasActive) item.classList.add('active');
+      if (!wasActive) {
+        item.classList.add('active');
+        // 按需加载：展开时才设置 img/video src
+        item.querySelectorAll('img[data-src]').forEach(img => {
+          if (!img.src) img.src = img.dataset.src;
+        });
+      }
     });
   });
 
