@@ -190,8 +190,8 @@ const DATA = {
 
   /* ---- 04. 数字人口播广告（2条） ---- */
   digitalHuman: [
-    { id: 'dh-1', title: '口红种草口播', desc: 'AI数字人口播广告 · 9:16 竖版', ratio: '9:16', src: 'assets/digital-human/dh-1.mp4', poster: '' },
-    { id: 'dh-2', title: '冲锋衣种草口播', desc: 'AI数字人口播广告 · 9:16 竖版', ratio: '9:16', src: 'assets/digital-human/dh-2.mp4', poster: '' },
+    { id: 'dh-1', title: '口红种草口播', desc: 'AI数字人口播广告 · 9:16 竖版', ratio: '9:16', src: 'assets/digital-human/dh-1.mp4', poster: 'assets/digital-human/poster-dh-1.jpg' },
+    { id: 'dh-2', title: '冲锋衣种草口播', desc: 'AI数字人口播广告 · 9:16 竖版', ratio: '9:16', src: 'assets/digital-human/dh-2.mp4', poster: 'assets/digital-human/poster-dh-2.jpg' },
   ],
 
   /* ---- 05. 漫剧（2组） ----
@@ -208,10 +208,10 @@ const DATA = {
       id: 'group-comic-team',
       title: '漫剧2',
       videos: [
-        { id: 'comic-3', title: '漫剧2 · 第1集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-3.mp4', poster: '' },
+        { id: 'comic-3', title: '漫剧2 · 第1集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-3.mp4', poster: 'assets/comic/poster-comic-3.jpg' },
         { id: 'comic-4', title: '漫剧2 · 第2集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-4.mp4', poster: 'assets/comic/poster-team-2.jpg' },
-        { id: 'comic-5', title: '漫剧2 · 第3集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-5.mp4', poster: '' },
-        { id: 'comic-6', title: '漫剧2 · 第4集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-6.mp4', poster: '' },
+        { id: 'comic-5', title: '漫剧2 · 第3集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-5.mp4', poster: 'assets/comic/poster-comic-5.jpg' },
+        { id: 'comic-6', title: '漫剧2 · 第4集', desc: 'AI分镜生成动态漫 · 团队协作', ratio: '16:9', src: 'assets/comic/comic-6.mp4', poster: 'assets/comic/poster-comic-6.jpg' },
       ]
     }
   ]
