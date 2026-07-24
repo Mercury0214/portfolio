@@ -908,6 +908,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 16px;
   line-height: 1.8;
   color: var(--text-secondary);
+  white-space: pre-line;
 }
 .about-skills h4 {
   font-size: 14px;
