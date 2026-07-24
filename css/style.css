@@ -1157,6 +1157,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero-title { font-size: 56px; }
   .main-image-grid { grid-template-columns: repeat(3, 1fr); }
   .video-grid { grid-template-columns: repeat(3, 1fr); }
+  .section-alt { padding-left: var(--space-lg); padding-right: var(--space-lg); }
 }
 
 @media (max-width: 768px) {
@@ -1188,7 +1189,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav-toggle { display: flex; }
 
   .section { padding-right: var(--space-lg); }
-  .section-alt { padding-right: var(--space-lg); }
+  .section-alt { padding-left: var(--space-lg); padding-right: var(--space-lg); }
 
   .hero-title { font-size: 40px; }
   .hero-subtitle { font-size: 16px; }
